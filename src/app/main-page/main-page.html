@@ -1,0 +1,37 @@
+<div class="loading" *ngIf="loading">იტვირთება...</div>
+
+<div class="error" *ngIf="error">{{ error }}</div>
+
+<div class="no-products" *ngIf="!loading && !error && products.length === 0">
+  პროდუქტები ვერ მოიძებნა
+</div>
+
+<div class="products-container" *ngIf="!loading && !error && products.length > 0">
+  <div *ngFor="let product of products" class="product-card">
+    <div *ngIf="product.image" class="product-image">
+      <img [src]="product.image" [alt]="product.name" />
+    </div>
+
+    <div class="product-info">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p *ngIf="product.categoryId" class="product-category">
+        კატეგორია: {{ product.categoryId }}
+      </p>
+
+      <div class="product-details">
+        <p *ngIf="product.vegeterian" class="vegeterian">ვეგეტარიანული</p>
+        <p *ngIf="product.nuts" class="nuts">თხილი</p>
+        <p *ngIf="product.spiciness" class="spiciness">
+          პიკანტობა: {{ product.spiciness }}/10
+        </p>
+      </div>
+
+      <div class="product-footer">
+        <div class="price-info">
+          <span class="basket-price">{{ product.price }} ₾</span>
+        </div>
+        <button class="add-button">კალათაში დამატება</button>
+      </div>
+    </div>
+  </div>
+</div>
