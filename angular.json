@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "Restoraunt": {
+    "restaurant": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Restoraunt:build:production"
+              "buildTarget": "restaurant:build:production"
             },
             "development": {
-              "buildTarget": "Restoraunt:build:development"
+              "buildTarget": "restaurant:build:development"
             }
           },
           "defaultConfiguration": "development"

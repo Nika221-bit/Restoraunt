@@ -9,5 +9,5 @@ import { Header } from './header/header';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('Restoraunt');
+  protected readonly title = signal('Restaurant');
 }
